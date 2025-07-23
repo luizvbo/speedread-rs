@@ -1,23 +1,5 @@
 ## speedread-rs
 
-A terminal-based speed reader written in Rust.
-
------
-
-## Table of Contents
-
-  * [About](https://www.google.com/search?q=%23about)
-  * [Features](https://www.google.com/search?q=%23features)
-  * [Installation](https://www.google.com/search?q=%23installation)
-  * [Usage](https://www.google.com/search?q=%23usage)
-  * [Controls](https://www.google.com/search?q=%23controls)
-  * [Contributing](https://www.google.com/search?q=%23contributing)
-  * [License](https://www.google.com/search?q=%23license)
-
------
-
-## About
-
 `speedread-rs` is a minimalist command-line application designed
 to help you read faster using the Rapid Serial Visual Presentation (RSVP)
 method. It displays one word at a time at a customizable speed,
@@ -25,18 +7,15 @@ helping to reduce subvocalization and improve reading efficiency.
 The application is built with Rust, ensuring high performance and
 reliability.
 
------
-
 ## Features
 
-  * **Customizable WPM (Words Per Minute)**: Adjust your reading speed on the fly.
-  * **Dynamic Word Timing**: Optionally adjusts display time based on word length for better readability.
-  * **Pause Functionality**: Pause and resume reading at any time.
-  * **Context View**: When paused, view the surrounding text to regain context.
-  * **Terminal-Based UI**: A clean and distraction-free reading experience directly in your terminal.
-  * **Reads from File or Stdin**: Easily read content from a specified file or pipe text directly into the application.
+  - **Customizable WPM (Words Per Minute)**: Adjust your reading speed on the fly.
+  - **Dynamic Word Timing**: Optionally adjusts display time based on word length for better readability.
+  - **Pause Functionality**: Pause and resume reading at any time.
+  - **Context View**: When paused, view the surrounding text to regain context.
+  - **Terminal-Based UI**: A clean and distraction-free reading experience directly in your terminal.
+  - **Reads from File or Stdin**: Easily read content from a specified file or pipe text directly into the application.
 
------
 
 ## Installation
 
@@ -53,8 +32,6 @@ To install `speedread-rs`, you'll need Rust and Cargo installed on your system. 
     ```
 3.  **Run the application:**
     The executable will be located in `./target/release/speedread-rs`. You can add it to your `PATH` for easier access, or run it directly.
-
------
 
 ## Usage
 
@@ -94,8 +71,6 @@ Start reading `article.txt` at 300 WPM with dynamic timing:
 speedread-rs -f article.txt --wpm 300 -d
 ```
 
------
-
 ## Controls
 
 While `speedread-rs` is running, you can use the following keyboard controls:
@@ -105,20 +80,12 @@ While `speedread-rs` is running, you can use the following keyboard controls:
   * **-**: Decrease WPM by 10 (min 10 WPM).
   * **Esc / q**: Quit the application.
 
------
-
 ## Contributing
 
 Contributions are welcome\! If you have any suggestions, bug reports, or want to contribute code, please feel free to open an issue or submit a pull request on GitHub.
-
------
 
 ## License
 
 This project is licensed under the MIT License - see the `LICENSE` file for details.
 
------
 
-### Repository Description String:
-
-"A minimalist, high-performance terminal-based speed reader built in Rust, leveraging the Rapid Serial Visual Presentation (RSVP) method to boost your reading speed with customizable WPM, dynamic word timing, and a clear, distraction-free interface. Read from files or stdin."
