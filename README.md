@@ -1,71 +1,124 @@
-# speedread-rs
+## speedread-rs
 
-**speedread-rs** is a terminal-based speed reading tool written in Rust. It
-displays one word at a time using the Rapid Serial Visual Presentation (RSVP)
-technique, helping users read text faster and with better focus.
+A terminal-based speed reader written in Rust.
 
-## 🚀 Features
+-----
 
--  Reads from a file or standard input
--  Adjustable Words Per Minute (WPM)
--  Dynamic timing based on word length
--  Pause and resume with context view
--  Optimal Recognition Point (ORP) highlighting
--  Clean terminal UI using `crossterm`
+## Table of Contents
 
-## 📦 Installation
+  * [About](https://www.google.com/search?q=%23about)
+  * [Features](https://www.google.com/search?q=%23features)
+  * [Installation](https://www.google.com/search?q=%23installation)
+  * [Usage](https://www.google.com/search?q=%23usage)
+  * [Controls](https://www.google.com/search?q=%23controls)
+  * [Contributing](https://www.google.com/search?q=%23contributing)
+  * [License](https://www.google.com/search?q=%23license)
 
-Make sure you have https://www.rust-lang.org/tools/install installed.
+-----
+
+## About
+
+`speedread-rs` is a minimalist command-line application designed
+to help you read faster using the Rapid Serial Visual Presentation (RSVP)
+method. It displays one word at a time at a customizable speed,
+helping to reduce subvocalization and improve reading efficiency.
+The application is built with Rust, ensuring high performance and
+reliability.
+
+-----
+
+## Features
+
+  * **Customizable WPM (Words Per Minute)**: Adjust your reading speed on the fly.
+  * **Dynamic Word Timing**: Optionally adjusts display time based on word length for better readability.
+  * **Pause Functionality**: Pause and resume reading at any time.
+  * **Context View**: When paused, view the surrounding text to regain context.
+  * **Terminal-Based UI**: A clean and distraction-free reading experience directly in your terminal.
+  * **Reads from File or Stdin**: Easily read content from a specified file or pipe text directly into the application.
+
+-----
+
+## Installation
+
+To install `speedread-rs`, you'll need Rust and Cargo installed on your system. If you don't have them, you can install them via `rustup`.
+
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/luizvbo/speedread-rs.git
+    cd speedread-rs
+    ```
+2.  **Build the project:**
+    ```bash
+    cargo build --release
+    ```
+3.  **Run the application:**
+    The executable will be located in `./target/release/speedread-rs`. You can add it to your `PATH` for easier access, or run it directly.
+
+-----
+
+## Usage
+
+You can use `speedread-rs` by providing a file path or by piping text into it.
+
+### Reading from a file
 
 ```bash
-git clone https://github.com/luizvbo/speedread-rs.git
-cd speedread-rs
-cargo build --release
+speedread-rs -f your_document.txt
 ```
 
-## 🧪 Usage
+### Reading from stdin
 
 ```bash
-speedread-rs [OPTIONS] [FILE]
+cat your_document.txt | speedread-rs
 ```
 
-### Options
-
-- `-w`, `--wpm <WPM>`: Set initial words per minute (default: 250)
-- `-d`, `--dynamic-time`: Enable dynamic timing based on word length
-- `-h`, `--help`: Show help message
-
-### Examples
+Or simply type your text and press `Ctrl+D` (or `Ctrl+Z` on Windows) to signal EOF:
 
 ```bash
-# Read from a file at 300 WPM
-speedread-rs -w 300 sample.txt
-
-# Read from stdin with dynamic timing
-cat sample.txt | speedread-rs -d
+speedread-rs
+This is some text I want to speed read.
+^D
 ```
 
-## ⌨️ Controls
+### Command Line Arguments
 
-- `Space`: Pause/Resume
-- `+` or `=`: Increase WPM
-- `-`: Decrease WPM
-- `q` or `Esc`: Quit
+  * `-f, --file <FILE>`: The file to read from. If not provided, `speedread-rs` reads from stdin.
+  * `--wpm <WPM>`: Initial words per minute (default: 250.0).
+  * `-d, --dynamic-time`: Calculate word display time based on its length.
 
-## 🛠️ Dependencies
+**Example:**
 
-- https://crates.io/crates/clap – Command-line argument parsing
-- https://crates.io/crates/crossterm – Terminal manipulation
-- https://crates.io/crates/unicode-segmentation – Unicode word boundaries
+Start reading `article.txt` at 300 WPM with dynamic timing:
 
-## 📁 Project Structure
+```bash
+speedread-rs -f article.txt --wpm 300 -d
+```
 
-- `main.rs`: Entry point, handles input and app setup
-- `config.rs`: CLI argument parsing
-- `ui.rs`: Terminal rendering logic
-- `input.rs`: Keyboard event handling
-- `app.rs`: Main application loop
+-----
 
-## 📜 License
+## Controls
 
-This project is licensed under the MIT License. See the LICENSE file for details.
+While `speedread-rs` is running, you can use the following keyboard controls:
+
+  * **Spacebar**: Toggle pause/resume.
+  * **+ / =**: Increase WPM by 10 (max 1000 WPM).
+  * **-**: Decrease WPM by 10 (min 10 WPM).
+  * **Esc / q**: Quit the application.
+
+-----
+
+## Contributing
+
+Contributions are welcome\! If you have any suggestions, bug reports, or want to contribute code, please feel free to open an issue or submit a pull request on GitHub.
+
+-----
+
+## License
+
+This project is licensed under the MIT License - see the `LICENSE` file for details.
+
+-----
+
+### Repository Description String:
+
+"A minimalist, high-performance terminal-based speed reader built in Rust, leveraging the Rapid Serial Visual Presentation (RSVP) method to boost your reading speed with customizable WPM, dynamic word timing, and a clear, distraction-free interface. Read from files or stdin."
